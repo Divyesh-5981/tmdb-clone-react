@@ -1,0 +1,97 @@
+// Header Section
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(3, 37, 65);
+  height: 64px;
+  width: 100%;
+  z-index: 10;
+  transition: top 0.2s linear;
+  margin: 0 auto;
+  padding: 0 8rem;
+
+  .left-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a.logo {
+      display: block;
+      margin-right: 16px;
+      height: 20px;
+      width: 154px;
+    }
+
+    ul.navbar {
+      display: flex;
+
+      li {
+        margin-right: 14px;
+
+        a {
+          padding: 0.5rem;
+          color: $secondary-color;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .right-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      display: flex;
+
+      li:first-child {
+        margin: 0;
+      }
+
+      li {
+        margin-left: 30px;
+
+        a {
+          color: $secondary-color;
+          font-weight: 600;
+
+          img {
+            display: block;
+            height: 23px;
+            width: 23px;
+          }
+
+          img.search-icon {
+            display: block;
+            height: 29px;
+            width: 29px;
+          }
+        }
+
+        div.translate-lan {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 28px;
+          height: 26px;
+          border: 1px solid #fff;
+          border-radius: 3px;
+          padding: 3px 5px;
+          color: $secondary-color;
+          font-size: 0.9em;
+
+          &:hover {
+            background: $secondary-color;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

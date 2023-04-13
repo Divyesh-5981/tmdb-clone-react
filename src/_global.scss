@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+// Global CSS
+
+$primary-color: #000000;
+$secondary-color: #ffffff;
+$font-size: 16px;
+$large-font: 24px;
+$font-weight: 600;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
