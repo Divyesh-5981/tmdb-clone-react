@@ -1,0 +1,58 @@
+.trending-div {
+  padding-top: 30px;
+  background: url("./assets/images/trending-bg.jpeg");
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+
+  .trending-title-div {
+    display: flex;
+    padding: 0 40px;
+
+    h2 {
+      margin-right: 20px;
+    }
+
+    .trending-selector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(3, 37, 65, 1);
+      border-radius: 30px;
+
+      h3 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1em;
+        padding: 4px 20px;
+        margin-bottom: 0;
+        white-space: nowrap;
+        font-weight: 600;
+      }
+
+      a {
+        color: rgba(3, 37, 65, 1);
+      }
+
+      h3.active-trending {
+        background: #032541;
+        border-radius: inherit;
+        height: -webkit-fill-available;
+      }
+    }
+  }
+}
+
+a.active-link {
+  background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.trending-movie {
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 2rem;
+  margin-left: 44px;
+}

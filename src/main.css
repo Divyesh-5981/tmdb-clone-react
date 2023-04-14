@@ -113,6 +113,10 @@ img {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-image: linear-gradient(to right, rgba(3, 37, 62, 0.8) 0%, rgba(3, 37, 62, 0) 100%), url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/iNh3BivHyg5sQRPP1KOkzguEX0H.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .title-div,
@@ -139,7 +143,7 @@ img {
 
 .search-div {
   padding-top: 14px;
-  padding-bottom: 3.5rem;
+  padding-bottom: 3.8rem;
 }
 .search-div form {
   display: flex;
@@ -172,4 +176,85 @@ img {
   cursor: pointer;
   right: 0;
   font-size: 16px;
+}
+.search-div form .submit-input:hover {
+  color: #000000;
+}
+
+.trending-div {
+  padding-top: 30px;
+  background: url("./assets/images/trending-bg.jpeg");
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+.trending-div .trending-title-div {
+  display: flex;
+  padding: 0 40px;
+}
+.trending-div .trending-title-div h2 {
+  margin-right: 20px;
+}
+.trending-div .trending-title-div .trending-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(3, 37, 65);
+  border-radius: 30px;
+}
+.trending-div .trending-title-div .trending-selector h3 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  padding: 4px 20px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.trending-div .trending-title-div .trending-selector a {
+  color: rgb(3, 37, 65);
+}
+.trending-div .trending-title-div .trending-selector h3.active-trending {
+  background: #032541;
+  border-radius: inherit;
+  height: -webkit-fill-available;
+}
+
+a.active-link {
+  background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.trending-movie {
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 2rem;
+  margin-left: 44px;
+}
+
+.single-movie {
+  width: 150px;
+  margin-right: 1.5rem;
+}
+
+.movie-img {
+  height: 225px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-content-div {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 10px 12px 10px;
+  height: 170px;
+  width: 150px;
+}
+.movie-content-div a {
+  font-weight: 700;
+  background: transparent;
+  font-size: 1em;
+  color: #000000;
 }/*# sourceMappingURL=main.css.map */

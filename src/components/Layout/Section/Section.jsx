@@ -1,4 +1,5 @@
 import React from "react";
+import Trending from "./Trending/Trending";
 
 function Section() {
   return (
@@ -22,6 +23,7 @@ function Section() {
             </form>
           </div>
         </div>
+        <Trending></Trending>
       </section>
     </div>
   );

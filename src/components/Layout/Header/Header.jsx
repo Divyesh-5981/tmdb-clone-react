@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../../assets/logo.svg";
-import addIcon from "../../assets/add_icon.svg";
-import searchIcon from "../../assets/search_icon.svg";
+import logo from "../../../assets/images/logo.svg";
+import addIcon from "../../../assets/images/add_icon.svg";
+import searchIcon from "../../../assets/images/search_icon.svg";
 
 function Header() {
   return (

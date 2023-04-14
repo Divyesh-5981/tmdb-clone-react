@@ -1,3 +1,5 @@
 @import "./global";
-@import "components/Layout/Header";
-@import "components/Layout/Section";
+@import "components/Layout/Header/Header";
+@import "components/Layout/Section/Section";
+@import "components/Layout//Section/Trending/Trending";
+@import "components/Layout/Section/Trending/Movie/Movie";

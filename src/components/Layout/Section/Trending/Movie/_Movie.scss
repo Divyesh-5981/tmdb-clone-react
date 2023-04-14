@@ -1,0 +1,24 @@
+.single-movie {
+  width: 150px;
+  margin-right: 1.5rem;
+}
+.movie-img {
+  height: 225px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-content-div {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 10px 12px 10px;
+  height: 170px;
+  width: 150px;
+
+  a {
+    font-weight: 700;
+    background: transparent;
+    font-size: 1em;
+    color: $primary-color;
+  }
+}
