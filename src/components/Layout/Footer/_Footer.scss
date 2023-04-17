@@ -1,0 +1,55 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  background-color: #03243f;
+  padding: 80px 0 80px 0;
+
+  h3 {
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  a {
+    font-size: 17px;
+  }
+  a,
+  h3 {
+    color: $secondary-color;
+  }
+
+  .logo-div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    img {
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+    }
+
+    a {
+      position: relative;
+      top: 102px;
+      border-color: #fff;
+      background-color: #fff;
+      color: rgba(1, 180, 228, 1);
+      font-size: 1.3em;
+      font-weight: bold;
+      display: inline-block;
+      word-wrap: break-word;
+      white-space: normal;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+  }
+
+  .mr {
+    margin-right: 40px;
+  }
+}
+.tmdb-footer-logo {
+  width: 130px;
+}

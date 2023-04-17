@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 * {
   margin: 0;
@@ -231,7 +232,18 @@ a.active-link {
   display: flex;
   overflow-x: scroll;
   margin-top: 2rem;
-  margin-left: 44px;
+  padding-left: 44px;
+}
+
+::-webkit-scrollbar {
+  height: 8px; /* height of horizontal scrollbar ← You're missing this */
+  width: 10px; /* width of vertical scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(219, 219, 219);
+  border-radius: 10px;
+  border: 1px solid rgb(219, 219, 219);
 }
 
 .single-movie {
@@ -257,4 +269,105 @@ a.active-link {
   background: transparent;
   font-size: 1em;
   color: #000000;
+}
+
+.popular-div {
+  padding-top: 30px;
+  height: 500px;
+}
+.popular-div .popular-title-div {
+  display: flex;
+  padding: 0 40px;
+}
+.popular-div .popular-title-div h2 {
+  margin-right: 20px;
+}
+.popular-div .popular-title-div .popular-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(3, 37, 65);
+  border-radius: 30px;
+}
+.popular-div .popular-title-div .popular-selector h3 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  padding: 4px 20px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.popular-div .popular-title-div .popular-selector a {
+  color: rgb(3, 37, 65);
+}
+.popular-div .popular-title-div .popular-selector h3.active-popular {
+  background: #032541;
+  border-radius: inherit;
+  height: -webkit-fill-available;
+}
+
+a.active-link {
+  background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.popular-movie {
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 2rem;
+  margin-left: 44px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  background-color: #03243f;
+  padding: 80px 0 80px 0;
+}
+.footer h3 {
+  font-weight: bold;
+  font-size: 20px;
+  white-space: nowrap;
+}
+.footer a {
+  font-size: 17px;
+}
+.footer a,
+.footer h3 {
+  color: #ffffff;
+}
+.footer .logo-div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.footer .logo-div img {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+}
+.footer .logo-div a {
+  position: relative;
+  top: 102px;
+  border-color: #fff;
+  background-color: #fff;
+  color: rgb(1, 180, 228);
+  font-size: 1.3em;
+  font-weight: bold;
+  display: inline-block;
+  word-wrap: break-word;
+  white-space: normal;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+.footer .mr {
+  margin-right: 40px;
+}
+
+.tmdb-footer-logo {
+  width: 130px;
 }/*# sourceMappingURL=main.css.map */

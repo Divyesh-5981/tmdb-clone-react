@@ -1,5 +1,6 @@
 import React from "react";
 import Trending from "./Trending/Trending";
+import Popular from "./Popular/Popular";
 
 function Section() {
   return (
@@ -24,6 +25,9 @@ function Section() {
           </div>
         </div>
         <Trending></Trending>
+
+        {/* Popular movie section starts from here. */}
+        <Popular></Popular>
       </section>
     </div>
   );

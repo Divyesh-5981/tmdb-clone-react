@@ -1,11 +1,8 @@
-.trending-div {
+.popular-div {
   padding-top: 30px;
-  background: url("./assets/images/trending-bg.jpeg");
   height: 500px;
-  background-repeat: no-repeat;
-  background-position-y: center;
 
-  .trending-title-div {
+  .popular-title-div {
     display: flex;
     padding: 0 40px;
 
@@ -13,7 +10,7 @@
       margin-right: 20px;
     }
 
-    .trending-selector {
+    .popular-selector {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,7 +32,7 @@
         color: rgba(3, 37, 65, 1);
       }
 
-      h3.active-trending {
+      h3.active-popular {
         background: #032541;
         border-radius: inherit;
         height: -webkit-fill-available;
@@ -50,20 +47,9 @@ a.active-link {
   -webkit-background-clip: text;
 }
 
-.trending-movie {
+.popular-movie {
   display: flex;
   overflow-x: scroll;
   margin-top: 2rem;
-  padding-left: 44px;
-}
-
-::-webkit-scrollbar {
-  height: 8px; /* height of horizontal scrollbar ← You're missing this */
-  width: 10px; /* width of vertical scrollbar */
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgb(219, 219, 219);
-  border-radius: 10px;
-  border: 1px solid rgb(219, 219, 219);
+  margin-left: 44px;
 }
