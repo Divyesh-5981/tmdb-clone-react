@@ -28,12 +28,14 @@
 
     ul.navbar {
       display: flex;
+      position: relative;
 
       li {
         margin-right: 14px;
 
         a {
           padding: 0.5rem;
+          cursor: pointer;
           color: $secondary-color;
           font-weight: 600;
         }
@@ -94,4 +96,49 @@
       }
     }
   }
+}
+
+.dropdown-menu-tv {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff !important;
+  border-radius: 4px !important;
+  top: 30px;
+  display: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 4px !important;
+  top: 30px;
+  display: none;
+}
+
+a.nav-a {
+  color: rgba(33, 37, 41, 0.9) !important;
+  display: block;
+  padding: 4px 85px 7px 16px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  border-radius: inherit !important;
+}
+
+.dropdown-movies:hover .dropdown-menu,
+.dropdown-tvshow:hover .dropdown-menu-tv {
+  display: block;
+}
+
+.dropdown-movies,
+.dropdown-tvshow {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu-tv a:hover {
+  background-color: #ddd;
 }

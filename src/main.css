@@ -49,12 +49,14 @@ img {
 }
 .header .left-navbar ul.navbar {
   display: flex;
+  position: relative;
 }
 .header .left-navbar ul.navbar li {
   margin-right: 14px;
 }
 .header .left-navbar ul.navbar li a {
   padding: 0.5rem;
+  cursor: pointer;
   color: #ffffff;
   font-weight: 600;
 }
@@ -102,6 +104,51 @@ img {
 .header .right-navbar ul li div.translate-lan:hover {
   background: #ffffff;
   color: #000000;
+}
+
+.dropdown-menu-tv {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff !important;
+  border-radius: 4px !important;
+  top: 30px;
+  display: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 4px !important;
+  top: 30px;
+  display: none;
+}
+
+a.nav-a {
+  color: rgba(33, 37, 41, 0.9) !important;
+  display: block;
+  padding: 4px 85px 7px 16px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  border-radius: inherit !important;
+}
+
+.dropdown-movies:hover .dropdown-menu,
+.dropdown-tvshow:hover .dropdown-menu-tv {
+  display: block;
+}
+
+.dropdown-movies,
+.dropdown-tvshow {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu-tv a:hover {
+  background-color: #ddd;
 }
 
 .container {
@@ -258,6 +305,7 @@ a.active-link {
 }
 
 .movie-content-div {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 26px 10px 12px 10px;
@@ -269,6 +317,10 @@ a.active-link {
   background: transparent;
   font-size: 1em;
   color: #000000;
+}
+
+.hover-moviename:hover {
+  color: rgb(1, 180, 228);
 }
 
 .popular-div {
@@ -348,7 +400,7 @@ a.active-link {
 .footer .logo-div img {
   position: absolute;
   right: 0;
-  bottom: -20px;
+  bottom: -22px;
 }
 .footer .logo-div a {
   position: relative;
@@ -370,4 +422,78 @@ a.active-link {
 
 .tmdb-footer-logo {
   width: 130px;
+}
+
+.circular-div {
+  position: absolute;
+  top: -22px;
+  height: 38px;
+  width: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #081c22;
+  border-radius: 50%;
+  padding: 2px;
+}
+.circular-div span {
+  position: absolute;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+.circular-div span sup {
+  font-size: 5px;
+}
+
+.container .movies-div {
+  width: 100%;
+  padding: 30px 40px 40px 30px;
+}
+.container .movies-div .title {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.container .movies-div .title h2 {
+  font-size: 1.6em;
+}
+
+.content-wrapper .search-movies-div {
+  width: 260px;
+}
+.content-wrapper .search-movies-div .mt {
+  margin-top: 12px;
+}
+.content-wrapper .search-movies-div .border-color-shadow {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+}
+.content-wrapper .search-movies-div .name {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+  align-items: center;
+}
+.content-wrapper .search-movies-div .name h2 {
+  font-size: 1.1em;
+}
+.content-wrapper .search-movies-div .name img {
+  width: 16px;
+  transform: rotate(90deg);
+}
+
+.more-info-div {
+  width: 100%;
+  padding: 14px 16px;
+  border-top: 1px solid #eee;
+}
+.more-info-div h3 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=main.css.map */

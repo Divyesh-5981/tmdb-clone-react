@@ -1,4 +1,5 @@
 import React from "react";
+import CircularProgressBar from "./CircularProgressBar/CircularProgressBar";
 
 function dateFormater(date) {
   var months = [
@@ -33,14 +34,13 @@ function dateFormater(date) {
 }
 
 function Movie({ movie }) {
-  console.log(movie.poster_path);
+  console.log(movie);
   return (
     <div className="single-movie">
       <div className="movie-img-div">
         <img
           loading="lazy"
           className="movie-img"
-          // src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
           src={`${
             movie.poster_path
               ? "https://image.tmdb.org/t/p/original" + movie.poster_path
@@ -50,7 +50,10 @@ function Movie({ movie }) {
         />
       </div>
       <div className="movie-content-div">
-        <a href="#">{movie?.title ? movie.title : movie.name}</a>
+        <CircularProgressBar movieVote={movie.vote_average} />
+        <a href="#" className="hover-moviename">
+          {movie?.title ? movie.title : movie.name}
+        </a>
         <p>
           {movie?.release_date
             ? dateFormater(new Date(movie.release_date))

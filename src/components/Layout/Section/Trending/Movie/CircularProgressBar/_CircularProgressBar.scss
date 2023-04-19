@@ -1,0 +1,23 @@
+.circular-div {
+  position: absolute;
+  top: -22px;
+  height: 38px;
+  width: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #081c22;
+  border-radius: 50%;
+  padding: 2px;
+
+  span {
+    position: absolute;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+
+    sup {
+      font-size: 5px;
+    }
+  }
+}

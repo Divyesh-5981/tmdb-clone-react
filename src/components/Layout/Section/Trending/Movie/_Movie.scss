@@ -9,6 +9,7 @@
 }
 
 .movie-content-div {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 26px 10px 12px 10px;
@@ -21,4 +22,8 @@
     font-size: 1em;
     color: $primary-color;
   }
+}
+
+.hover-moviename:hover {
+  color: rgb(1, 180, 228);
 }
