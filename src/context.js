@@ -6,6 +6,7 @@ const POPULAR_API = "https://api.themoviedb.org/3/tv/popular?api_key=700a119d738
 const initialState = {
     trendingMovies: [],
     popularMovies: [],
+    page: 1,
 }
 
 // creation of context
@@ -16,6 +17,9 @@ const AppProvider = ({ children }) => {
 
     // useState
     const [state, setState] = useState(initialState)
+
+    console.log(state.trendingMovies)
+
 
     const fetchMovieData = async (url) => {
 

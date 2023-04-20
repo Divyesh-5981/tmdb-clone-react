@@ -15,8 +15,18 @@
 }
 
 .content-wrapper {
+  display: flex;
+  gap: 2rem;
+
+  .movies-list-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 2rem;
+  }
+
   .search-movies-div {
-    width: 260px;
+    width: 100%;
+    max-width: 258px;
 
     .mt {
       margin-top: 12px;
@@ -39,9 +49,14 @@
         font-size: 1.1em;
       }
 
+      .closed {
+        transform: rotate(0);
+      }
+
       img {
         width: 16px;
         transform: rotate(90deg);
+        cursor: pointer;
       }
     }
   }
@@ -59,5 +74,84 @@
     font-size: 1em;
     font-weight: 300;
     margin-bottom: 10px;
+  }
+}
+
+// filter
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding: 14px 16px 16px 16px;
+
+  h3 {
+    width: 100%;
+    font-size: 1em;
+    font-weight: 300;
+  }
+
+  label.ml {
+    margin-left: 4px;
+    cursor: pointer;
+  }
+
+  .radio-input {
+    border-radius: 50%;
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    outline: 0;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    -webkit-appearance: none;
+    color: transparent;
+    background-color: #fff;
+    border-color: #adb5bd;
+  }
+
+  .radio-input::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: currentColor;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    left: 50%;
+    border-radius: 50%;
+    transform: scale(1) translate(-50%, -50%);
+  }
+
+  .radio-input:checked {
+    border-color: rgba(1, 180, 228, 1);
+    color: #fff;
+    background-color: rgba(1, 180, 228, 1);
+  }
+}
+
+.load-more-div {
+  height: 50px;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(1, 180, 228, 1);
+  justify-content: center;
+  border-radius: 8px;
+  grid-column: span 5;
+
+  .load-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+    color: $secondary-color;
   }
 }

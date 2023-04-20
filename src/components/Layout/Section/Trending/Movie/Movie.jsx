@@ -33,23 +33,23 @@ function dateFormater(date) {
   return month + " " + day + ", " + year;
 }
 
-function Movie({ movie }) {
+function Movie({ movie, addCard }) {
   console.log(movie);
   return (
-    <div className="single-movie">
+    <div className={`single-movie ${addCard ? "add-border" : ""}`}>
       <div className="movie-img-div">
         <img
           loading="lazy"
-          className="movie-img"
+          className={`movie-img${addCard ? " add-height" : ""}`}
           src={`${
-            movie.poster_path
+            movie?.poster_path
               ? "https://image.tmdb.org/t/p/original" + movie.poster_path
               : "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg"
           }`}
           alt="movie"
         />
       </div>
-      <div className="movie-content-div">
+      <div className={`movie-content-div${addCard ? " remove-height" : ""}`}>
         <CircularProgressBar movieVote={movie.vote_average} />
         <a href="#" className="hover-moviename">
           {movie?.title ? movie.title : movie.name}
