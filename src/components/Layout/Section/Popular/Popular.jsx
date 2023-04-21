@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Movie from "../Trending/Movie/Movie";
 import { useGlobalContext } from "../../../../context";
 
 function Popular() {
   const [popularOnTV, setPopularOnTV] = useState(true);
   const [popularOnTheater, setPopularOnTheater] = useState(false);
+  const [isScroll, setIsScroll] = useState(false);
+
+  const scrollDiv = useRef();
 
   const { popularMovies, getPopularByOnTv, getPopularByTheater } =
     useGlobalContext();
@@ -44,8 +47,20 @@ function Popular() {
           </h3>
         </div>
       </div>
-      <div className="trending-movies-container">
-        <div className="trending-movie">
+      <div
+        className={`trending-movies-container should-fade ${
+          isScroll ? "is-not-fading" : "is-fading"
+        }`}
+      >
+        <div
+          ref={scrollDiv}
+          className="trending-movie"
+          onScroll={() => {
+            const scrollPoint = scrollDiv.current.scrollLeft;
+            if (scrollPoint >= 0 && scrollPoint <= 50) setIsScroll(false);
+            else setIsScroll(true);
+          }}
+        >
           {popularMovies.map((movie) => {
             return <Movie movie={movie} key={movie.id} />;
           })}

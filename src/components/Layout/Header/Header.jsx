@@ -19,7 +19,9 @@ function Header() {
               <Link to="/movie" className="nav-a">
                 Popular
               </Link>
-              <Link className="nav-a">Now Playing</Link>
+              <Link to="/movie/now-playing" className="nav-a">
+                Now Playing
+              </Link>
               <Link className="nav-a">Upcoming</Link>
               <Link className="nav-a">Top Rated</Link>
             </div>

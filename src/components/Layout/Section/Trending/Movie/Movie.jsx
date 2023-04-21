@@ -34,18 +34,25 @@ function dateFormater(date) {
 }
 
 function Movie({ movie, addCard }) {
-  console.log(movie);
+  // decide movie poster
+  const generateMovieImage = () => {
+    if (movie?.poster_path && addCard)
+      return (
+        "https://www.themoviedb.org/t/p/w220_and_h330_face" + movie.poster_path
+      );
+    else if (movie?.poster_path)
+      return "https://image.tmdb.org/t/p/original" + movie.poster_path;
+    else
+      return "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg";
+  };
+
   return (
     <div className={`single-movie ${addCard ? "add-border" : ""}`}>
       <div className="movie-img-div">
         <img
           loading="lazy"
           className={`movie-img${addCard ? " add-height" : ""}`}
-          src={`${
-            movie?.poster_path
-              ? "https://image.tmdb.org/t/p/original" + movie.poster_path
-              : "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg"
-          }`}
+          src={generateMovieImage()}
           alt="movie"
         />
       </div>
@@ -65,3 +72,11 @@ function Movie({ movie, addCard }) {
 }
 
 export default Movie;
+/* `${
+  movie?.poster_path
+  ? "https://image.tmdb.org/t/p/original" + movie.poster_path
+  : "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg"
+  ? "https://www.themoviedb.org/t/p/w220_and_h330_face" +
+    movie.poster_path
+  : ""
+}` */

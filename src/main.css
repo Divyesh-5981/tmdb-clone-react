@@ -34,7 +34,7 @@ img {
   z-index: 10;
   transition: top 0.2s linear;
   margin: 0 auto;
-  padding: 0 8rem;
+  padding: 0 6.2rem;
 }
 .header .left-navbar {
   display: flex;
@@ -67,6 +67,7 @@ img {
 }
 .header .right-navbar ul {
   display: flex;
+  align-items: center;
 }
 .header .right-navbar ul li:first-child {
   margin: 0;
@@ -106,24 +107,16 @@ img {
   color: #000000;
 }
 
+.dropdown-menu,
 .dropdown-menu-tv {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  background: #ffffff !important;
-  border-radius: 4px !important;
-  top: 30px;
-  display: none;
-}
-
-.dropdown-menu {
   position: absolute;
   display: flex;
   flex-direction: column;
   background: #ffffff;
   border-radius: 4px !important;
-  top: 30px;
+  top: 27px;
   display: none;
+  padding: 0.5rem 0;
 }
 
 a.nav-a {
@@ -148,7 +141,7 @@ a.nav-a {
 
 .dropdown-menu a:hover,
 .dropdown-menu-tv a:hover {
-  background-color: #ddd;
+  background-color: #f8f9fa;
 }
 
 .container {
@@ -235,6 +228,26 @@ a.nav-a {
   height: 500px;
   background-repeat: no-repeat;
   background-position-y: center;
+  position: relative;
+}
+.trending-div .is-fading:after {
+  transition: linear 0.3s;
+  opacity: 1;
+}
+.trending-div .is-not-fading:after {
+  transition: linear 0.3s;
+  opacity: 0;
+}
+.trending-div .should-fade:after {
+  content: "";
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  will-change: opacity;
+  pointer-events: none;
 }
 .trending-div .trending-title-div {
   display: flex;
@@ -341,6 +354,26 @@ a.active-link {
 .popular-div {
   padding-top: 30px;
   height: 500px;
+  position: relative;
+}
+.popular-div .is-fading:after {
+  transition: linear 0.3s;
+  opacity: 1;
+}
+.popular-div .is-not-fading:after {
+  transition: linear 0.3s;
+  opacity: 0;
+}
+.popular-div .should-fade:after {
+  content: "";
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  will-change: opacity;
+  pointer-events: none;
 }
 .popular-div .popular-title-div {
   display: flex;
@@ -597,6 +630,9 @@ a.active-link {
   font-size: 24px;
   font-weight: 700;
   color: #ffffff;
+}
+.load-more-div .load-btn:hover {
+  color: #0a1526;
 }
 
 .select-style {

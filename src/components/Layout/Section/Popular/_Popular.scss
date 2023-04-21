@@ -1,6 +1,33 @@
 .popular-div {
   padding-top: 30px;
   height: 500px;
+  position: relative;
+
+  .is-fading:after {
+    transition: linear 0.3s;
+    opacity: 1;
+  }
+
+  .is-not-fading:after {
+    transition: linear 0.3s;
+    opacity: 0;
+  }
+
+  .should-fade:after {
+    content: "";
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      #fff 100%
+    );
+    will-change: opacity;
+    pointer-events: none;
+  }
 
   .popular-title-div {
     display: flex;

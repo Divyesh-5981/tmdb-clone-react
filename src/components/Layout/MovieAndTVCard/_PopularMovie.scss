@@ -153,5 +153,9 @@
     font-size: 24px;
     font-weight: 700;
     color: $secondary-color;
+
+    &:hover {
+      color: #0a1526;
+    }
   }
 }
