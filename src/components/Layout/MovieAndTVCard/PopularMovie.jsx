@@ -5,6 +5,20 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const initialState = { moviesOrTVShowList: [], page: 1, isLoad: false };
 
+// decide movie or tv categories based on API
+const checkCategory = (url) => {
+  // check for movies category
+  if (url.includes("/movie/popular")) return "Popular Movies";
+  else if (url.includes("/movie/now_playing")) return "Now Playing Movies";
+  else if (url.includes("/movie/upcoming")) return "Upcoming Movies";
+  else if (url.includes("/movie/top_rated")) return "Top Rated Movies";
+  // check for tv categories
+  else if (url.includes("/tv/popular")) return "Popular TV Shows";
+  else if (url.includes("/tv/airing_today")) return "TV Shows Airing Today";
+  else if (url.includes("/tv/on_the_air")) return "Currently Airing TV Shows";
+  else return "Top Rated TV Shows";
+};
+
 function PopularMovie({ API }) {
   const [state, setState] = useState(initialState);
 
@@ -35,7 +49,7 @@ function PopularMovie({ API }) {
 
   useEffect(() => {
     fetchmoviesOrTVShowList(`${API}&page=${state.page}`);
-  }, [state.page]);
+  }, [state.page, API]);
 
   return (
     <div className="container">
@@ -49,7 +63,7 @@ function PopularMovie({ API }) {
       >
         <div className="movies-div">
           <div className="title">
-            <h2>Popular Movies</h2>
+            <h2>{checkCategory(API)}</h2>
           </div>
           <div className="content-wrapper">
             <FilterMovie

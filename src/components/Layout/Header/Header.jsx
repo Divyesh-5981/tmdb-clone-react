@@ -22,8 +22,12 @@ function Header() {
               <Link to="/movie/now-playing" className="nav-a">
                 Now Playing
               </Link>
-              <Link className="nav-a">Upcoming</Link>
-              <Link className="nav-a">Top Rated</Link>
+              <Link className="nav-a" to="movie/upcoming">
+                Upcoming
+              </Link>
+              <Link className="nav-a" to="movie/top-rated">
+                Top Rated
+              </Link>
             </div>
             {/* dropdown ends here */}
           </li>
@@ -31,12 +35,18 @@ function Header() {
             <a href="#">TV Shows</a>
             {/* dropdown of tv shows on hover */}
             <div className="dropdown-menu-tv">
-              <Link to="/" className="nav-a">
+              <Link to="/tv" className="nav-a">
                 Popular
               </Link>
-              <Link className="nav-a">Airing Today</Link>
-              <Link className="nav-a">On TV</Link>
-              <Link className="nav-a">Top Rated</Link>
+              <Link to="/tv/airing-today" className="nav-a">
+                Airing Today
+              </Link>
+              <Link to="/tv/on-tv" className="nav-a">
+                On TV
+              </Link>
+              <Link to="/tv/top-rated" className="nav-a">
+                Top Rated
+              </Link>
             </div>
           </li>
           <li>

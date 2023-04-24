@@ -637,4 +637,49 @@ a.active-link {
 
 .select-style {
   font-size: 0.9em;
+}
+
+.info-nav {
+  margin-top: 62px;
+}
+.info-nav .info-ul {
+  display: flex;
+  width: 100%;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+}
+.info-nav .info-ul li {
+  padding: 13px 0 8px 0;
+  margin-right: 40px;
+}
+.info-nav .info-ul li a {
+  color: #000;
+  font-weight: 400;
+}
+
+.active {
+  border-bottom: 4px solid rgb(1, 180, 228);
+}
+
+.backdrop-div {
+  border-bottom: 1px solid var(--primaryColor);
+  background-position: left calc(50vw - 170px - 340px) top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.backdrop-div .more-info-poster-div {
+  background-image: linear-gradient(to right, rgb(32, 32, 95) calc(50vw - 170px - 340px), rgba(32, 32, 95, 0.84) 50%, rgba(32, 32, 95, 0.84) 100%);
+}
+.backdrop-div .mt-0 {
+  margin-top: 0;
+}
+.backdrop-div .mt-0 .more-info-wrapper {
+  padding: 30px;
+}
+.backdrop-div .mt-0 .more-info-wrapper .poster-content {
+  display: flex;
+}
+.backdrop-div .mt-0 .more-info-wrapper .poster-content .poster-wrapper img {
+  border-radius: 8px;
 }/*# sourceMappingURL=main.css.map */

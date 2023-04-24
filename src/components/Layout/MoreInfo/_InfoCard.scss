@@ -1,0 +1,62 @@
+// header of more info
+
+.info-nav {
+  margin-top: 62px;
+
+  .info-ul {
+    display: flex;
+    width: 100%;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      padding: 13px 0 8px 0;
+      margin-right: 40px;
+
+      a {
+        color: #000;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.active {
+  border-bottom: 4px solid rgba(1, 180, 228, 1);
+}
+
+// poster image and more info
+
+.backdrop-div {
+  border-bottom: 1px solid var(--primaryColor);
+  background-position: left calc((50vw - 170px) - 340px) top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  //   background-image: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/lWqjXgut48IK5f5IRbDBAoO2Epp.jpg");
+
+  .more-info-poster-div {
+    background-image: linear-gradient(
+      to right,
+      rgba(31.5, 31.5, 94.5, 1) calc((50vw - 170px) - 340px),
+      rgba(31.5, 31.5, 94.5, 0.84) 50%,
+      rgba(31.5, 31.5, 94.5, 0.84) 100%
+    );
+  }
+
+  .mt-0 {
+    margin-top: 0;
+    .more-info-wrapper {
+      padding: 30px;
+      .poster-content {
+        display: flex;
+
+        .poster-wrapper {
+          img {
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+  }
+}

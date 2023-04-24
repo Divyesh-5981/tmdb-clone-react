@@ -5,8 +5,8 @@ import React from "react";
 // calculate Movie Vote
 const calcMovieVote = (vote) => {
   const voteAvg = vote.toFixed(1);
-  const percentage = voteAvg * 10;
-  return percentage;
+  let percentage = voteAvg * 10;
+  return (percentage = percentage === 0 ? "NR" : percentage);
 };
 
 // make strokeColor based on percentage
@@ -25,11 +25,11 @@ function CircularProgressBar({ movieVote }) {
         strokeWidth={8}
         trailColor="#1d4028"
         trailWidth={8}
-        percent={calcMovieVote(movieVote)}
+        percent={calcMovieVote(movieVote) !== "NR" && calcMovieVote(movieVote)}
       />
       <span>
         {calcMovieVote(movieVote)}
-        <sup>%</sup>
+        {calcMovieVote(movieVote) !== "NR" && <sup>%</sup>}
       </span>
     </div>
   );

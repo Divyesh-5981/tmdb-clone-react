@@ -18,9 +18,6 @@ const AppProvider = ({ children }) => {
     // useState
     const [state, setState] = useState(initialState)
 
-    console.log(state.trendingMovies)
-
-
     const fetchMovieData = async (url) => {
 
         try {
