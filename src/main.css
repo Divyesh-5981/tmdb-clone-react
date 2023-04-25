@@ -224,7 +224,7 @@ a.nav-a {
 
 .trending-div {
   padding-top: 30px;
-  background: url("./assets/images/trending-bg.jpeg");
+  background: url("./assets/images/bg_graph.svg");
   height: 500px;
   background-repeat: no-repeat;
   background-position-y: center;
@@ -289,6 +289,7 @@ a.active-link {
 }
 
 .trending-movie {
+  scroll-behavior: smooth;
   display: flex;
   overflow-x: scroll;
   margin-top: 2rem;
@@ -494,6 +495,23 @@ a.active-link {
   font-size: 5px;
 }
 
+.scale-div {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  top: 0;
+  cursor: pointer;
+}
+.scale-div .large-span-font {
+  font-size: 25px;
+}
+.scale-div .large-span-font .large-sup-font {
+  font-size: 10px;
+}
+.scale-div:hover {
+  transform: scale(1.1);
+}
+
 .container .movies-div {
   width: 100%;
   padding: 30px 40px 40px 30px;
@@ -639,6 +657,12 @@ a.active-link {
   font-size: 0.9em;
 }
 
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .info-nav {
   margin-top: 62px;
 }
@@ -682,4 +706,145 @@ a.active-link {
 }
 .backdrop-div .mt-0 .more-info-wrapper .poster-content .poster-wrapper img {
   border-radius: 8px;
+}
+
+.content-wrappers {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.title-info {
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+.title-info h2 {
+  width: 100%;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-left: 12px;
+  cursor: pointer;
+}
+.title-info h2:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+.title-info h2 span {
+  opacity: 0.8;
+  font-weight: 400;
+}
+.title-info .facts {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.title-info .facts span {
+  padding-left: 16px;
+  position: relative;
+  padding-right: 5px;
+}
+.title-info .facts .before::before {
+  position: absolute;
+  content: "•";
+  left: 1px;
+  right: -19px;
+  font-size: 1.1rem;
+}
+
+.score-info {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ffffff;
+  font-weight: 700;
+  margin-left: 12px;
+  flex-wrap: wrap;
+}
+.score-info .user-score {
+  margin-left: 15px;
+}
+.score-info .play-div {
+  margin-left: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.score-info .play-div:hover {
+  opacity: 0.6;
+}
+.score-info .play-div a {
+  color: #ffffff;
+  display: contents;
+}
+.score-info .play-div img {
+  height: 22px;
+  width: 22px;
+  filter: invert(1);
+}
+
+.overview-info {
+  color: #ffffff;
+  width: 100%;
+  margin-left: 12px;
+}
+.overview-info .tagline {
+  font-weight: 400;
+  font-size: 17px;
+  opacity: 0.7;
+  font-style: italic;
+}
+.overview-info .overview {
+  margin: 10px 0 8px 0;
+  font-size: 20px;
+}
+
+.poster-wrapper {
+  min-width: 300px;
+}
+
+.ott-offer {
+  width: 100%;
+  background-color: rgb(3, 37, 65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  color: #fff;
+}
+.ott-offer .text-wrapper {
+  width: 100%;
+  height: 60px;
+  max-height: 60px;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.ott-offer .text-wrapper .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+.ott-offer .text-wrapper .button .provider {
+  width: 36px;
+  margin-right: 4px;
+}
+.ott-offer .text-wrapper .button .provider img {
+  border-radius: 4px;
+}
+.ott-offer .text-wrapper .button .text h4 {
+  line-height: 1em;
+  opacity: 0.8;
+  font-weight: 400;
+}
+.ott-offer .text-wrapper .button .text h3 {
+  font-size: 16px;
+  line-height: 1em;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

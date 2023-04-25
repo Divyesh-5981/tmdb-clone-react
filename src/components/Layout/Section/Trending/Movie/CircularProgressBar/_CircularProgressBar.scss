@@ -21,3 +21,23 @@
     }
   }
 }
+.scale-div {
+  position: relative;
+  // transform: scale(1.95);
+  height: 60px;
+  width: 60px;
+  top: 0;
+  cursor: pointer;
+
+  .large-span-font {
+    font-size: 25px;
+
+    .large-sup-font {
+      font-size: 10px;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

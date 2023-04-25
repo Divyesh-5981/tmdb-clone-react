@@ -43,7 +43,7 @@ const generateMovieImage = (movie, addCard) => {
 
 // put url of selected movie or tv
 const getURL = (movie) => {
-    const type = movie.media_type ? "movie" : "tv";
+    const type = movie.first_air_date ? "tv" : "movie";
     return `/${type}/${movie.id}`;
 };
 
@@ -86,4 +86,49 @@ function formatDate(date, info) {
     }
 }
 
-export { dateFormater, generateMovieImage, getURL, formatDate } 
+// convert miniute into hour
+
+const toHours = (minutes) => {
+    const hour = Math.floor(minutes / 60);
+
+    if (hour === 0) {
+        return minutes + "m";
+    }
+
+    return hour + "h";
+}
+
+// below function generate genre name based on movie or tv object
+const generateGenreName = (genres) => {
+    let genreName = "";
+
+    genres.filter((genre) => {
+        genreName = genreName + ", " + genre.name;
+    });
+
+    return genreName.replace(",", "");
+};
+
+// find origin country from response
+
+const findOriginCountry = (data) => {
+    if (data?.production_countries)
+        return data.production_countries[0].iso_3166_1;
+    else if (data?.origin_country) return data.origin_country[0];
+    else if (data?.production_companies)
+        return data?.production_companies[0].origin_country;
+    else return "false";
+};
+
+// getProviderChannelLogo 
+
+const getStreamingLogo = (providers) => {
+
+    if (providers?.flatrate) return providers.flatrate[0].logo_path;
+    else if (providers?.buy) return providers.buy[0].logo_path;
+    else if (providers?.ads) return providers.ads[0].logo_path;
+    else if (providers?.free) return providers.free[0].logo_path;
+    else return "";
+}
+
+export { dateFormater, generateMovieImage, getURL, formatDate, toHours, generateGenreName, findOriginCountry, getStreamingLogo } 

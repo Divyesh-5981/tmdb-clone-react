@@ -1,12 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { formatDate } from "../../../Helpers/Helper";
+import CircularProgressBar from "../Section/Trending/Movie/CircularProgressBar/CircularProgressBar";
+import {
+  formatDate,
+  toHours,
+  generateGenreName,
+  findOriginCountry,
+  getStreamingLogo,
+} from "../../../Helpers/Helper";
 import { useParams } from "react-router-dom";
+import playIcon from "../../../assets/images/play_icon.svg";
 
 // const API =
 //   "https://api.themoviedb.org/3/movie/{movie_id}?api_key=700a119d738aa19bfa6867998fafed10&language=en-US";
 
 // const API =
 //   "https://api.themoviedb.org/3/tv/{tv_id}?api_key=700a119d738aa19bfa6867998fafed10&language=en-US";
+
+// const VIDEOAPI =
+//   "https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=700a119d738aa19bfa6867998fafed10&language=en-US";
+
+// https://api.themoviedb.org/3/tv/{tv_id}/videos?api_key=<<api_key>>&language=en-US
 
 const initialState = {
   posterPath: "",
@@ -18,17 +31,10 @@ const initialState = {
   country: "",
   tagLine: "",
   overView: "",
-};
-
-// below function generate genre name based on movie or tv object
-const generateGenreName = (genres) => {
-  let genreName = "";
-
-  genres.filter((genre) => {
-    genreName = genreName + "," + genre.name;
-  });
-
-  return genreName.replace(",", "");
+  voteAvg: "",
+  videoKey: "",
+  providers: {},
+  providerChannelLogoPath: "",
 };
 
 function InfoCard() {
@@ -56,13 +62,12 @@ function InfoCard() {
               : data?.last_air_date,
             genres: data.genres,
             runTime: data.runtime
-              ? data.runtime + "m"
-              : data.episode_run_time + "m",
-            country: data?.production_companies
-              ? data?.production_companies[0].origin_country
-              : data?.origin_country[0],
-            tagLine: data?.tagLine,
+              ? toHours(data.runtime)
+              : toHours(data.episode_run_time),
+            country: findOriginCountry(data),
+            tagLine: data?.tagline,
             overView: data?.overview,
+            voteAvg: data?.vote_average,
           };
         });
       }
@@ -71,15 +76,58 @@ function InfoCard() {
     }
   };
 
+  const fetchVideo = async (url) => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setCardInfo((prev) => {
+        return {
+          ...prev,
+          videoKey: data?.results[0] === null ? null : data?.results[0]?.key,
+        };
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchProviders = async (url) => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setCardInfo((prev) => {
+        return {
+          ...prev,
+          providers: data?.results?.IN ? data.results.IN : null,
+          providerChannelLogoPath: getStreamingLogo(data?.results?.IN),
+        };
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     fetchInfo(
-      `https://api.themoviedb.org/3/${type}/${id}?api_key=700a119d738aa19bfa6867998fafed10&language=en-US`
+      `https://api.themoviedb.org/3/${type}/${id}?api_key=700a119d738aa19bfa6867998fafed10`
+    );
+    fetchVideo(
+      `https://api.themoviedb.org/3/${type}/${id}/videos?api_key=700a119d738aa19bfa6867998fafed10`
+    );
+    fetchProviders(
+      `https://api.themoviedb.org/3/${type}/${id}/watch/providers?api_key=700a119d738aa19bfa6867998fafed10`
     );
   }, []);
 
   return (
     <>
       {console.log(cardInfo)}
+      {console.log("providers is available", cardInfo.providers)}
+      {console.log(
+        "provider channel logo path",
+        cardInfo.providerChannelLogoPath
+      )}
+
       {/* header of moreinfo starts from here */}
       <div className="info-nav">
         <nav>
@@ -117,17 +165,73 @@ function InfoCard() {
                     src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${cardInfo.posterPath}`}
                     alt="image"
                   />
+                  {cardInfo.providers && (
+                    <div className="ott-offer">
+                      <div className="text-wrapper">
+                        <div className="button">
+                          <div className="provider">
+                            <img
+                              src={`https://image.tmdb.org/t/p/original${cardInfo.providerChannelLogoPath}`}
+                              alt="provider channel"
+                            />
+                          </div>
+                          <div className="text">
+                            <h4>Now Streaming</h4>
+                            <h3>Watch Now</h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="content-wrappers">
                   <div className="header-content">
                     <div className="title-info">
                       <h2>
                         {cardInfo.title}
-                        <span>{`(${cardInfo.year})`}</span>
+                        <span>{` (${cardInfo.year})`}</span>
                       </h2>
+                      <div className="facts">
+                        <span className="release">
+                          {`${formatDate(
+                            new Date(cardInfo.releasedDate),
+                            true
+                          )}(${cardInfo.country})`}
+                        </span>
+                        <span className="genres before">
+                          {generateGenreName(cardInfo.genres)}
+                        </span>
+                        <span className="runtime before">
+                          {cardInfo.runTime}
+                        </span>
+                      </div>
                     </div>
-                    <div className="score-info"></div>
-                    <div className="overview-info"></div>
+                    <div className="score-info">
+                      <CircularProgressBar
+                        movieVote={cardInfo.voteAvg}
+                        scale="true"
+                      />
+                      <div className="user-score">
+                        User <br /> Score
+                      </div>
+                      {cardInfo.videoKey && (
+                        <div className="play-div">
+                          <a
+                            href={`https://www.youtube.com/watch?v=${cardInfo.videoKey}`}
+                          >
+                            <img src={playIcon} alt="" />
+                            <span>Play Trailer</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                    <div className="overview-info">
+                      {cardInfo.tagLine && (
+                        <h3 className="tagline">{cardInfo.tagLine}</h3>
+                      )}
+                      <h3 className="overview">Overview</h3>
+                      <p>{cardInfo.overView}</p>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -141,3 +245,6 @@ function InfoCard() {
 }
 
 export default InfoCard;
+// country: data?.origin_country
+// ? data?.origin_country[0]
+// : data?.production_companies[0].origin_country

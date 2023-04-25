@@ -4,7 +4,7 @@ import React from "react";
 
 // calculate Movie Vote
 const calcMovieVote = (vote) => {
-  const voteAvg = vote.toFixed(1);
+  const voteAvg = Number(vote).toFixed(1);
   let percentage = voteAvg * 10;
   return (percentage = percentage === 0 ? "NR" : percentage);
 };
@@ -16,9 +16,9 @@ const makeStrokeColor = (percentage) => {
   else return "#db2360";
 };
 
-function CircularProgressBar({ movieVote }) {
+function CircularProgressBar({ movieVote, scale }) {
   return (
-    <div className="circular-div">
+    <div className={`circular-div ${scale === "true" && "scale-div"}`}>
       <Circle
         className="circular-progress"
         strokeColor={makeStrokeColor(calcMovieVote(movieVote))}
@@ -27,9 +27,11 @@ function CircularProgressBar({ movieVote }) {
         trailWidth={8}
         percent={calcMovieVote(movieVote) !== "NR" && calcMovieVote(movieVote)}
       />
-      <span>
+      <span className={`${scale === "true" && "large-span-font"}`}>
         {calcMovieVote(movieVote)}
-        {calcMovieVote(movieVote) !== "NR" && <sup>%</sup>}
+        {calcMovieVote(movieVote) !== "NR" && (
+          <sup className={`${scale === "true" && "large-sup-font"}`}>%</sup>
+        )}
       </span>
     </div>
   );

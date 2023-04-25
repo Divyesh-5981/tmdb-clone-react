@@ -1,6 +1,6 @@
 .trending-div {
   padding-top: 30px;
-  background: url("./assets/images/trending-bg.jpeg");
+  background: url("./assets/images/bg_graph.svg");
   height: 500px;
   background-repeat: no-repeat;
   background-position-y: center;
@@ -78,6 +78,7 @@ a.active-link {
 }
 
 .trending-movie {
+  scroll-behavior: smooth;
   display: flex;
   overflow-x: scroll;
   margin-top: 2rem;

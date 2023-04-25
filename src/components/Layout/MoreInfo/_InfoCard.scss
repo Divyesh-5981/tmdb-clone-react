@@ -1,3 +1,10 @@
+// header content
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 // header of more info
 
 .info-nav {
@@ -55,6 +62,171 @@
           img {
             border-radius: 8px;
           }
+        }
+      }
+    }
+  }
+}
+
+// content-wrapper
+.content-wrappers {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+// title div
+.title-info {
+  color: $secondary-color;
+  margin-bottom: 24px;
+
+  h2 {
+    width: 100%;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-left: 12px;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    span {
+      opacity: 0.8;
+      font-weight: 400;
+    }
+  }
+
+  .facts {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    span {
+      padding-left: 16px;
+      position: relative;
+      padding-right: 5px;
+    }
+
+    .before::before {
+      position: absolute;
+      content: "•";
+      left: 1px;
+      right: -19px;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// score-info
+.score-info {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $secondary-color;
+  font-weight: 700;
+  margin-left: 12px;
+  flex-wrap: wrap;
+
+  .user-score {
+    margin-left: 15px;
+  }
+
+  .play-div {
+    margin-left: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    a {
+      color: $secondary-color;
+      display: contents;
+    }
+    img {
+      height: 22px;
+      width: 22px;
+      filter: invert(1);
+    }
+  }
+}
+
+// overview
+.overview-info {
+  color: $secondary-color;
+  width: 100%;
+  margin-left: 12px;
+
+  .tagline {
+    font-weight: 400;
+    font-size: 17px;
+    opacity: 0.7;
+    font-style: italic;
+  }
+
+  .overview {
+    margin: 10px 0 8px 0;
+    font-size: 20px;
+  }
+}
+
+// poster-wrapper
+.poster-wrapper {
+  min-width: 300px;
+}
+
+// provider
+.ott-offer {
+  width: 100%;
+  background-color: rgba(3, 37, 65, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  color: #fff;
+
+  .text-wrapper {
+    width: 100%;
+    height: 60px;
+    max-height: 60px;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 8px;
+
+      .provider {
+        width: 36px;
+        margin-right: 4px;
+        img {
+          border-radius: 4px;
+        }
+      }
+
+      .text {
+        h4 {
+          line-height: 1em;
+          opacity: 0.8;
+          font-weight: 400;
+        }
+        h3 {
+          font-size: 16px;
+          line-height: 1em;
+          cursor: pointer;
         }
       }
     }

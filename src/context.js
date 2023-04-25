@@ -40,25 +40,21 @@ const AppProvider = ({ children }) => {
 
     // getTrending Movies By Week
     const getTrendingMoviesByWeek = () => {
-        console.log("Movies by week");
         fetchMovieData("https://api.themoviedb.org/3/trending/all/week?api_key=700a119d738aa19bfa6867998fafed10");
     }
 
     // getTrending Movies By Today
     const getTrendingMoviesByToday = () => {
-        console.log("Movies By Today");
         fetchMovieData(TRENDING_API)
     }
 
     // getPopular Movies On TV
     const getPopularByOnTv = () => {
-        console.log("Popular Movies on TV");
         fetchMovieData(POPULAR_API);
     }
 
     // getPopular Movies On TV
     const getPopularByTheater = () => {
-        console.log("Popular Movies on Theator");
         fetchMovieData("https://api.themoviedb.org/3/movie/now_playing?api_key=700a119d738aa19bfa6867998fafed10")
     }
 
