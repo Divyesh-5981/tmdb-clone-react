@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CircularProgressBar from "../Section/Trending/Movie/CircularProgressBar/CircularProgressBar";
+import CastInfo from "./CastInfo/CastInfo";
 import {
   formatDate,
   toHours,
@@ -9,6 +10,10 @@ import {
 } from "../../../Helpers/Helper";
 import { useParams } from "react-router-dom";
 import playIcon from "../../../assets/images/play_icon.svg";
+import thumbnailIcon from "../../../assets/images/thumbnail_icon.svg";
+import favouriteIcon from "../../../assets/images/favourite_icon.svg";
+import bookmarkIcon from "../../../assets/images/bookmark_icon.svg";
+import starIcon from "../../../assets/images/star_rating_icon.svg";
 
 // const API =
 //   "https://api.themoviedb.org/3/movie/{movie_id}?api_key=700a119d738aa19bfa6867998fafed10&language=en-US";
@@ -121,12 +126,12 @@ function InfoCard() {
 
   return (
     <>
-      {console.log(cardInfo)}
+      {/* {console.log(cardInfo)}
       {console.log("providers is available", cardInfo.providers)}
       {console.log(
         "provider channel logo path",
         cardInfo.providerChannelLogoPath
-      )}
+      )} */}
 
       {/* header of moreinfo starts from here */}
       <div className="info-nav">
@@ -214,6 +219,20 @@ function InfoCard() {
                       <div className="user-score">
                         User <br /> Score
                       </div>
+                      {/* buttons starts from here */}
+                      <div className="add-to-list-btn action-btns">
+                        <img src={thumbnailIcon} alt="thumbnail icon" />
+                      </div>
+                      <div className="fav-btn action-btns">
+                        <img src={favouriteIcon} alt="favourite icon" />
+                      </div>
+                      <div className="bookmark-btn action-btns">
+                        <img src={bookmarkIcon} alt="bookmark icon" />
+                      </div>
+                      <div className="star-btn action-btns">
+                        <img src={starIcon} alt="star icon" />
+                      </div>
+                      {/* buttons ends from here */}
                       {cardInfo.videoKey && (
                         <div className="play-div">
                           <a
@@ -240,11 +259,16 @@ function InfoCard() {
         </div>
       </div>
       {/* poster image and info ends from here */}
+
+      {/* Cast Section starts from here */}
+      <div className="container remove-mt">
+        <div className="div-content-wrapper">
+          <CastInfo type={type} id={id} />
+        </div>
+      </div>
+      {/* Cast Section ends from here */}
     </>
   );
 }
 
 export default InfoCard;
-// country: data?.origin_country
-// ? data?.origin_country[0]
-// : data?.production_companies[0].origin_country

@@ -763,10 +763,10 @@ a.active-link {
   flex-wrap: wrap;
 }
 .score-info .user-score {
-  margin-left: 15px;
+  margin-left: 6px;
+  margin-right: 20px;
 }
 .score-info .play-div {
-  margin-left: 15px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -815,6 +815,9 @@ a.active-link {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   color: #fff;
+  position: relative;
+  bottom: 9px;
+  z-index: 1;
 }
 .ott-offer .text-wrapper {
   width: 100%;
@@ -847,4 +850,303 @@ a.active-link {
   font-size: 16px;
   line-height: 1em;
   cursor: pointer;
+}
+
+.action-btns {
+  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #032541;
+  height: 46px;
+  border-radius: 50%;
+  margin: 0 20px 0 0;
+  cursor: pointer;
+}
+.action-btns img {
+  width: 16px;
+}
+
+.remove-mt {
+  margin-top: 0;
+}
+.remove-mt .div-content-wrapper {
+  width: 100%;
+  padding: 30px 40px 30px 30px;
+}
+
+.left-info-div .white-column-div {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 30px;
+  width: 1052px;
+}
+.left-info-div .white-column-div .cast-section {
+  width: 100%;
+  position: relative;
+  border-top: none;
+  padding: 0 0 30px 0;
+}
+.left-info-div .white-column-div .cast-section h3 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.left-info-div .white-column-div .cast-section p {
+  margin: 20px 0 0 0;
+  font-size: 17px;
+}
+.left-info-div .white-column-div .cast-section p a {
+  color: #000000;
+  font-weight: 600;
+}
+
+.right-info-div {
+  min-width: 260px;
+  width: 260px;
+}
+
+.should-fade:after {
+  content: "";
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  will-change: opacity;
+  pointer-events: none;
+}
+
+.is-fading:after {
+  transition: linear 0.3s;
+  opacity: 1;
+}
+
+.is-not-fading:after {
+  transition: linear 0.3s;
+  opacity: 0;
+}
+
+.social-section {
+  width: 100%;
+  padding: 30px 0;
+  border-top: 1px solid #d7d7d7;
+}
+
+.recommandation-section {
+  width: 100%;
+  padding: 30px 0;
+  border-top: 1px solid #d7d7d7;
+}
+.recommandation-section h3 {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.recommandation-section .recommandation-container {
+  position: relative;
+}
+.recommandation-section .recommandation-container .scroller {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+}
+
+.cast-scroller-div {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin-left: -4px;
+  padding-bottom: 10px;
+}
+.cast-scroller-div .single-cast-card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 4px;
+  border: 1px solid rgb(227, 227, 227);
+  padding-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 140px;
+  width: 140px;
+}
+.cast-scroller-div .single-cast-card .cast-img-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 175px;
+  background: #dbdbdb;
+}
+.cast-scroller-div .single-cast-card .cast-original-name {
+  padding: 10px 10px 0 10px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0 !important;
+  cursor: pointer;
+}
+.cast-scroller-div .single-cast-card .cast-original-name:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+.cast-scroller-div .single-cast-card .cast-character-name {
+  font-size: 14px !important;
+  padding: 0 10px;
+  margin-top: 0 !important;
+}
+
+.menu {
+  display: flex;
+  align-items: baseline;
+}
+.menu .title-heading {
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  margin-right: 50px;
+}
+.menu .review-heading {
+  font-weight: 600;
+  color: #000000;
+  font-size: 17px;
+  padding-bottom: 5px;
+  border-bottom: 4px solid rgb(1, 180, 228);
+  border-bottom-color: #000000;
+  cursor: pointer;
+}
+
+.card {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.grouped {
+  display: flex;
+  align-items: center;
+}
+.grouped .avatar {
+  width: 64px;
+  margin-right: 20px;
+}
+.grouped .avatar img {
+  border-radius: 50%;
+}
+
+.rounded-rating {
+  padding: 1px 8px;
+  margin-left: 14px;
+  font-size: 14px;
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #000;
+  border-color: #000;
+  border-radius: 8px;
+  color: #fff;
+  align-items: center;
+}
+.rounded-rating img {
+  width: 14px;
+  filter: invert(1);
+  margin-right: 5px;
+}
+.rounded-rating span {
+  color: #ffffff;
+}
+
+.rating-wrapper h3 {
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.rating-wrapper h3:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.h5 {
+  font-weight: 300 !important;
+  font-size: 14px !important;
+  margin-bottom: 0;
+}
+.h5 span {
+  font-weight: bold;
+}
+
+.teaser {
+  padding-left: 84px;
+  padding-top: 20px;
+}
+.teaser .spoiler-para {
+  margin-bottom: 16px;
+}
+
+.mini-card {
+  margin: 0 15px 0 0;
+  width: 250px;
+}
+
+.image-content {
+  width: 250px;
+  height: 141px;
+  cursor: pointer;
+}
+.image-content:hover .release-date {
+  visibility: visible;
+}
+.image-content img {
+  border-radius: 8px;
+}
+
+.info-div-recommand {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.info-div-recommand .name-href {
+  color: #000000;
+  padding-right: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.meta {
+  position: relative;
+}
+
+.release-date {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 40px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  top: -44px;
+}
+.release-date img {
+  width: 16px;
+  height: 16px;
+}
+.release-date .black-color {
+  filter: invert(1);
+  margin-right: 4px;
+  padding-left: 4px;
+}
+.release-date .date-img {
+  margin-right: 4px;
+}
+
+.action-img {
+  margin-left: 75px;
 }/*# sourceMappingURL=main.css.map */

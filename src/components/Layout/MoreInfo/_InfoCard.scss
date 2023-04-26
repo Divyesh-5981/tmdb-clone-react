@@ -132,11 +132,11 @@
   flex-wrap: wrap;
 
   .user-score {
-    margin-left: 15px;
+    margin-left: 6px;
+    margin-right: 20px;
   }
 
   .play-div {
-    margin-left: 15px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
@@ -193,6 +193,9 @@
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   color: #fff;
+  position: relative;
+  bottom: 9px;
+  z-index: 1;
 
   .text-wrapper {
     width: 100%;
@@ -230,5 +233,33 @@
         }
       }
     }
+  }
+}
+
+// buttons
+
+.action-btns {
+  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #032541;
+  height: 46px;
+  border-radius: 50%;
+  margin: 0 20px 0 0;
+  cursor: pointer;
+
+  img {
+    width: 16px;
+  }
+}
+
+// container
+.remove-mt {
+  margin-top: 0;
+
+  .div-content-wrapper {
+    width: 100%;
+    padding: 30px 40px 30px 30px;
   }
 }
