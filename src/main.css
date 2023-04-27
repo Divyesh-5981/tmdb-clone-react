@@ -225,7 +225,7 @@ a.nav-a {
 .trending-div {
   padding-top: 30px;
   background: url("./assets/images/bg_graph.svg");
-  height: 500px;
+  height: 670px;
   background-repeat: no-repeat;
   background-position-y: center;
   position: relative;
@@ -305,6 +305,12 @@ a.active-link {
   background: rgb(219, 219, 219);
   border-radius: 10px;
   border: 1px solid rgb(219, 219, 219);
+}
+
+.border-div {
+  background: #dbdbdb;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .single-movie {
@@ -431,6 +437,7 @@ a.active-link {
 }
 .footer h3 {
   font-weight: bold;
+  margin-bottom: 4px;
   font-size: 20px;
   white-space: nowrap;
 }
@@ -453,7 +460,7 @@ a.active-link {
 }
 .footer .logo-div a {
   position: relative;
-  top: 102px;
+  top: 118px;
   border-color: #fff;
   background-color: #fff;
   color: rgb(1, 180, 228);
@@ -471,6 +478,10 @@ a.active-link {
 
 .tmdb-footer-logo {
   width: 130px;
+}
+
+.info-div ul li {
+  line-height: 1.6em;
 }
 
 .circular-div {
@@ -954,6 +965,56 @@ a.active-link {
   padding-bottom: 10px;
 }
 
+.current-season {
+  width: 100%;
+  padding: 30px 0;
+  border-top: 1px solid #d7d7d7;
+}
+.current-season h3 {
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.current-season .season-card {
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.flex {
+  display: flex;
+}
+
+.season-poster {
+  width: 130px;
+  height: 195px;
+}
+.season-poster img {
+  width: 130px;
+  height: 195px;
+}
+
+.season-content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.season-content h4 {
+  margin-bottom: 8px;
+}
+.season-content p {
+  padding-top: 20px;
+}
+
 .cast-scroller-div {
   display: flex;
   overflow-y: hidden;
@@ -1038,6 +1099,8 @@ a.active-link {
 }
 
 .rounded-rating {
+  width: 54px;
+  height: 24px;
   padding: 1px 8px;
   margin-left: 14px;
   font-size: 14px;
@@ -1149,4 +1212,9 @@ a.active-link {
 
 .action-img {
   margin-left: 75px;
+}
+
+.dummy-img {
+  height: 141px;
+  width: 250px;
 }/*# sourceMappingURL=main.css.map */

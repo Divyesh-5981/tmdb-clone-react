@@ -113,10 +113,10 @@ const generateGenreName = (genres) => {
 
 const findOriginCountry = (data) => {
     if (data?.production_countries)
-        return data.production_countries[0].iso_3166_1;
+        return data.production_countries[0]?.iso_3166_1;
     else if (data?.origin_country) return data.origin_country[0];
     else if (data?.production_companies)
-        return data?.production_companies[0].origin_country;
+        return data?.production_companies[0]?.origin_country;
     else return "false";
 };
 
@@ -128,7 +128,35 @@ const getStreamingLogo = (providers) => {
     else if (providers?.buy) return providers.buy[0].logo_path;
     else if (providers?.ads) return providers.ads[0].logo_path;
     else if (providers?.free) return providers.free[0].logo_path;
+    else if (providers?.rent) return providers.rent[0].logo_path;
     else return "";
 }
 
-export { dateFormater, generateMovieImage, getURL, formatDate, toHours, generateGenreName, findOriginCountry, getStreamingLogo } 
+// getStreamingChannelName
+
+const getStreamingChannelName = (providers) => {
+
+    if (providers?.flatrate) return providers.flatrate[0].provider_name;
+    else if (providers?.buy) return providers.buy[0].provider_name;
+    else if (providers?.ads) return providers.ads[0].provider_name;
+    else if (providers?.free) return providers.free[0].provider_name;
+    else if (providers?.rent) return providers.rent[0].provider_name;
+    else return "";
+}
+
+// getAvatarPath 
+const getAvatarPath = (path) => {
+    if (path === null) {
+        return;
+    }
+    const pathIndex = path.lastIndexOf("/");
+    return path.substring(pathIndex)
+}
+
+// select poster path returns true if available
+const selectPosterPath = (path) => {
+    if (path === null) return false;
+    else return true;
+};
+
+export { selectPosterPath, dateFormater, generateMovieImage, getURL, formatDate, toHours, generateGenreName, findOriginCountry, getStreamingLogo, getStreamingChannelName, getAvatarPath } 

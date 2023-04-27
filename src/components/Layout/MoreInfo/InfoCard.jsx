@@ -7,6 +7,7 @@ import {
   generateGenreName,
   findOriginCountry,
   getStreamingLogo,
+  getStreamingChannelName,
 } from "../../../Helpers/Helper";
 import { useParams } from "react-router-dom";
 import playIcon from "../../../assets/images/play_icon.svg";
@@ -40,6 +41,7 @@ const initialState = {
   videoKey: "",
   providers: {},
   providerChannelLogoPath: "",
+  providerStreamingChannel: "",
 };
 
 function InfoCard() {
@@ -105,6 +107,7 @@ function InfoCard() {
           ...prev,
           providers: data?.results?.IN ? data.results.IN : null,
           providerChannelLogoPath: getStreamingLogo(data?.results?.IN),
+          getStreamingChannelName: getStreamingChannelName(data?.results?.IN),
         };
       });
     } catch (error) {
@@ -122,10 +125,11 @@ function InfoCard() {
     fetchProviders(
       `https://api.themoviedb.org/3/${type}/${id}/watch/providers?api_key=700a119d738aa19bfa6867998fafed10`
     );
-  }, []);
+  }, [type, id]);
 
   return (
     <>
+      {console.log(cardInfo)}
       {/* {console.log(cardInfo)}
       {console.log("providers is available", cardInfo.providers)}
       {console.log(
@@ -175,10 +179,14 @@ function InfoCard() {
                       <div className="text-wrapper">
                         <div className="button">
                           <div className="provider">
-                            <img
-                              src={`https://image.tmdb.org/t/p/original${cardInfo.providerChannelLogoPath}`}
-                              alt="provider channel"
-                            />
+                            {cardInfo.providerChannelLogoPath != "" ? (
+                              <img
+                                src={`https://image.tmdb.org/t/p/original${cardInfo.providerChannelLogoPath}`}
+                                alt="provider channel"
+                              />
+                            ) : (
+                              cardInfo.providerStreamingChannel
+                            )}
                           </div>
                           <div className="text">
                             <h4>Now Streaming</h4>
@@ -263,7 +271,7 @@ function InfoCard() {
       {/* Cast Section starts from here */}
       <div className="container remove-mt">
         <div className="div-content-wrapper">
-          <CastInfo type={type} id={id} />
+          <CastInfo title={cardInfo.title} type={type} id={id} />
         </div>
       </div>
       {/* Cast Section ends from here */}

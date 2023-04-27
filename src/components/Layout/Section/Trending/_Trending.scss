@@ -1,7 +1,7 @@
 .trending-div {
   padding-top: 30px;
   background: url("./assets/images/bg_graph.svg");
-  height: 500px;
+  height: 670px;
   background-repeat: no-repeat;
   background-position-y: center;
   position: relative;
@@ -94,4 +94,9 @@ a.active-link {
   background: rgb(219, 219, 219);
   border-radius: 10px;
   border: 1px solid rgb(219, 219, 219);
+}
+.border-div {
+  background: #dbdbdb;
+  overflow: hidden;
+  border-radius: 8px;
 }

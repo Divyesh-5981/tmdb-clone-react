@@ -7,6 +7,7 @@
 
   h3 {
     font-weight: bold;
+    margin-bottom: 4px;
     font-size: 20px;
     white-space: nowrap;
   }
@@ -32,7 +33,7 @@
 
     a {
       position: relative;
-      top: 102px;
+      top: 118px;
       border-color: #fff;
       background-color: #fff;
       color: rgba(1, 180, 228, 1);
@@ -52,4 +53,8 @@
 }
 .tmdb-footer-logo {
   width: 130px;
+}
+
+.info-div ul li {
+  line-height: 1.6em;
 }
