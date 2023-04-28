@@ -62,8 +62,8 @@ function InfoCard() {
             backdrop: data.backdrop_path,
             title: data.original_title ? data.original_title : data.name,
             year: data.release_date
-              ? data.release_date.substring(0, 4)
-              : data?.last_air_date.substring(0, 4),
+              ? data.release_date?.substring(0, 4)
+              : data?.last_air_date?.substring(0, 4),
             releasedDate: data.release_date
               ? data.release_date
               : data?.last_air_date,
@@ -138,7 +138,7 @@ function InfoCard() {
       )} */}
 
       {/* header of moreinfo starts from here */}
-      <div className="info-nav">
+      {/* <div className="info-nav">
         <nav>
           <ul className="info-ul">
             <li className="active">
@@ -155,7 +155,7 @@ function InfoCard() {
             </li>
           </ul>
         </nav>
-      </div>
+      </div> */}
       {/* header of moreinfo ends from here*/}
 
       {/* poster image and info starts from here */}
@@ -214,9 +214,11 @@ function InfoCard() {
                         <span className="genres before">
                           {generateGenreName(cardInfo.genres)}
                         </span>
-                        <span className="runtime before">
-                          {cardInfo.runTime}
-                        </span>
+                        {cardInfo.runTime != "m" && (
+                          <span className="runtime before">
+                            {cardInfo.runTime}
+                          </span>
+                        )}
                       </div>
                     </div>
                     <div className="score-info">

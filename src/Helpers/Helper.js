@@ -86,6 +86,17 @@ function formatDate(date, info) {
     }
 }
 
+// getDate in YYYY-MM-DD Format
+
+const getDate = (date) => {
+
+    let year = date.getFullYear();
+    let month = (date.getMonth() + 1).toString().padStart(2, "0");
+    let day = date.getDate().toString().padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
+
 // convert miniute into hour
 
 const toHours = (minutes) => {
@@ -159,4 +170,14 @@ const selectPosterPath = (path) => {
     else return true;
 };
 
-export { selectPosterPath, dateFormater, generateMovieImage, getURL, formatDate, toHours, generateGenreName, findOriginCountry, getStreamingLogo, getStreamingChannelName, getAvatarPath } 
+// storeDate if available otherwise return false
+const checkDate = (item) => {
+    if (item.first_air_date === "" || item.release_date === "") {
+        return "false"
+    } else {
+        console.log(item.first_air_date || item.release_date)
+        return item.first_air_date || item.release_date
+    }
+}
+
+export { checkDate, getDate, selectPosterPath, dateFormater, generateMovieImage, getURL, formatDate, toHours, generateGenreName, findOriginCountry, getStreamingLogo, getStreamingChannelName, getAvatarPath } 

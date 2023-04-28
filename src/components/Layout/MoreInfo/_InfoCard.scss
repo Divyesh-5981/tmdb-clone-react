@@ -54,6 +54,7 @@
   .mt-0 {
     margin-top: 0;
     .more-info-wrapper {
+      margin-top: 64px;
       padding: 30px;
       .poster-content {
         display: flex;
@@ -259,6 +260,7 @@
   margin-top: 0;
 
   .div-content-wrapper {
+    display: flex;
     width: 100%;
     padding: 30px 40px 30px 30px;
   }

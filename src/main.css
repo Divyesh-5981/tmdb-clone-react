@@ -710,6 +710,7 @@ a.active-link {
   margin-top: 0;
 }
 .backdrop-div .mt-0 .more-info-wrapper {
+  margin-top: 64px;
   padding: 30px;
 }
 .backdrop-div .mt-0 .more-info-wrapper .poster-content {
@@ -882,6 +883,7 @@ a.active-link {
   margin-top: 0;
 }
 .remove-mt .div-content-wrapper {
+  display: flex;
   width: 100%;
   padding: 30px 40px 30px 30px;
 }
@@ -1013,6 +1015,62 @@ a.active-link {
 }
 .season-content p {
   padding-top: 20px;
+}
+
+.poster-flex {
+  background: #dbdbdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 215px;
+}
+.poster-flex .addWidth {
+  width: 65px;
+  height: auto;
+}
+
+.facts-column {
+  margin-bottom: 30px;
+}
+.facts-column p {
+  margin: 0 0 20px 0;
+  font-size: 1em;
+}
+.facts-column p strong {
+  display: block;
+  font-weight: 600;
+}
+
+.keyword-column {
+  margin-bottom: 30px;
+}
+.keyword-column h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.keyword-column ul {
+  padding-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.keyword-column ul li {
+  margin-right: 5px;
+  margin-bottom: 10px;
+  line-height: 24px;
+  font-size: 0.9em;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.keyword-column ul li a {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid #d7d7d7;
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .cast-scroller-div {
@@ -1214,7 +1272,13 @@ a.active-link {
   margin-left: 75px;
 }
 
-.dummy-img {
-  height: 141px;
-  width: 250px;
+.ml {
+  margin-left: 145px;
+}
+
+.dummy-poster {
+  display: block;
+  width: 141px;
+  position: relative;
+  left: 45px;
 }/*# sourceMappingURL=main.css.map */
