@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Chevron from "../../../assets/images/chevron_right.svg";
 
 function WhereToWatch() {
+  const [whereToWatchIsOpen, setWhereToWatchIsOpen] = useState(false);
+
   return (
     <div className="where-to-watch-div border-color-shadow mt">
       <div className="name">

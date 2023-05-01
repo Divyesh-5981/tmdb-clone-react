@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Chevron from "../../../assets/images/chevron_right.svg";
+import Availability from "./Availability";
+import ReleaseDate from "./ReleaseDate";
+import Genres from "./Genres";
 
 function Filter() {
   const [filterIsOpen, setFilterIsOpen] = useState(false);
@@ -75,23 +78,16 @@ function Filter() {
           {/* Show Me Div ends from here */}
 
           {/* Availabilities div starts from here */}
-          <div className="filter">
-            <h3 className="availibility-heading">Availabilities</h3>
-            <label>
-              <input
-                type="checkbox"
-                name="availabilities"
-                value="true"
-                checked
-                id="availability"
-                className="availability-input"
-              />
-              <label htmlFor="availability" className="ml">
-                Search all availabilities?
-              </label>
-            </label>
-          </div>
+          <Availability />
           {/* Availabilities div ends from here */}
+
+          {/* Release Date Section starts from here */}
+          <ReleaseDate />
+          {/* Release Date Section ends from here */}
+
+          {/* Genres Section starts from here */}
+          <Genres />
+          {/* Genres Section ends from here */}
         </>
       )}
     </div>

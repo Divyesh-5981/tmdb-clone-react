@@ -22,8 +22,6 @@ const checkCategory = (url) => {
 function PopularMovie({ API }) {
   const [state, setState] = useState(initialState);
 
-  const [whereToWatchIsOpen, setWhereToWatchIsOpen] = useState(false);
-
   const fetchmoviesOrTVShowList = async (url) => {
     try {
       const response = await fetch(url);

@@ -17,6 +17,7 @@ function Movie({ movie, addCard }) {
             className={`movie-img${addCard ? " add-height" : ""}`}
             src={generateMovieImage(movie, addCard)}
             alt="movie"
+            title={movie?.title ? movie.title : movie.name}
           />
         </div>
       </Link>

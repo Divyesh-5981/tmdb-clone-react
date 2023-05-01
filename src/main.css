@@ -225,9 +225,9 @@ a.nav-a {
 .trending-div {
   padding-top: 30px;
   background: url("./assets/images/bg_graph.svg");
-  height: 670px;
+  height: 450px;
   background-repeat: no-repeat;
-  background-position-y: center;
+  background-position-y: 210px;
   position: relative;
 }
 .trending-div .is-fading:after {
@@ -340,7 +340,6 @@ a.active-link {
   display: flex;
   flex-direction: column;
   padding: 26px 10px 12px 10px;
-  height: 170px;
   width: 150px;
 }
 .movie-content-div a {
@@ -671,9 +670,12 @@ label {
 }
 label .availability-input {
   position: relative;
-  background-color: #01b4e4;
-  border-color: #01b4e4;
-  color: #fff;
+  min-height: 16px;
+  min-width: 16px;
+  border: 1px solid #adb5bd;
+  color: transparent;
+  background: #fff;
+  outline: 0;
 }
 label .availability-input::before {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23ffffff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e");
@@ -694,11 +696,64 @@ label .availability-input::before {
   background-position: 50%;
 }
 label .availability-input:checked {
-  color: #fff;
   box-shadow: none;
   border-color: rgb(1, 180, 228);
   color: #fff;
   background-color: rgb(1, 180, 228);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0.25rem;
+  display: inline-block;
+  min-width: 16px;
+  height: 16px;
+  width: 16px;
+}
+
+.availability-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.filter .release-date-heading {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.filter .genres-heading {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.filter .genres-nav li {
+  border: 1px solid #9e9e9e;
+  border-radius: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.9em;
+  margin-right: 6px;
+  margin-top: 8px;
+  padding: 4px 12px;
+}
+.filter .genres-nav li:hover {
+  background-color: rgb(1, 180, 228);
+  color: #ffffff;
+  border-color: rgb(1, 180, 228);
+}
+
+.active-genre {
+  background-color: rgb(1, 180, 228);
+  border-color: rgb(1, 180, 228);
+  color: #ffffff;
 }
 
 .select-style {
