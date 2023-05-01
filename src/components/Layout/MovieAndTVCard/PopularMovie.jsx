@@ -22,8 +22,6 @@ const checkCategory = (url) => {
 function PopularMovie({ API }) {
   const [state, setState] = useState(initialState);
 
-  const [sortIsOpen, setSortIsOpen] = useState(true);
-  const [filterIsOpen, setFilterIsOpen] = useState(false);
   const [whereToWatchIsOpen, setWhereToWatchIsOpen] = useState(false);
 
   const fetchmoviesOrTVShowList = async (url) => {
@@ -66,10 +64,7 @@ function PopularMovie({ API }) {
             <h2>{checkCategory(API)}</h2>
           </div>
           <div className="content-wrapper">
-            <FilterMovie
-              sortIsOpen={sortIsOpen}
-              setSortIsOpen={setSortIsOpen}
-            />
+            <FilterMovie />
             <MoviesList
               state={state}
               setState={setState}
